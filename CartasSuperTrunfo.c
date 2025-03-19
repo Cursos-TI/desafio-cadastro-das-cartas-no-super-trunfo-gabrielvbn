@@ -1,22 +1,76 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
+ //Variaveis carta 01
+
+    char estado1[20] , cidade1[20] , codigoCarta1 [5];
+    int populacao1 , pontosTuristicos1;
+    float pib1 , areak2_1;
+
+//Variaveis da carta 02
+
+  char estado2[20] , cidade2[20] , codigoCarta2 [5];
+  int populacao2 , pontosTuristicos2;
+  float pib2 , areak2_2;
     
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+//Interação com o usuário para incersão de dados para criação da carta 01
+
+  printf ("Agora vamos criar a primeira carta do jogo\n");
+  printf ("Digite o nome do Estado: ");
+  scanf ("%s" , estado1);
+  printf ("Digite o nome da Cidade: ");
+  scanf ("%s" , cidade1);
+  printf ("Digite um codigo para a carta(ex: A01,A02): ");
+  scanf ("%s" , codigoCarta1);
+  printf ("Qual a população desta cidade: ");
+  scanf ("%d" , &populacao1);
+  printf ("Qual a area total da cidade em km²: ");
+  scanf ("%f" , &areak2_1);
+  printf ("Qual o PIB desta cidade: ");
+  scanf ("%f" , &pib1);
+  printf ("Quantos pontos turisticos esta cidade tem: ");
+  scanf ("%d" , &pontosTuristicos1);
+
+//Interação com o usuário para incersão de dados para criação da carta 02
+
+  printf ("Agora vamos criar a carta 02 do jogo\n");
+  printf ("Digite o nome do Estado: ");
+  scanf ("%s" , estado2);
+  printf ("Digite o nome da Cidade: ");
+  scanf ("%s" , cidade2);
+  printf ("Digite um codigo para a carta(ex: A01,A02): ");
+  scanf ("%s" , codigoCarta2);
+  printf ("Qual a população desta cidade:");
+  scanf ("%d" , &populacao2);
+  printf ("Qual a area total da cidade em km²: ");
+  scanf ("%f" , &areak2_2);
+  printf ("Qual o PIB desta cidade: ");
+  scanf ("%f" , &pib2);
+  printf ("Quantos pontos turisticos esta cidade tem: ");
+  scanf ("%d" , &pontosTuristicos2);
+
+//Exibição da carta 01 criadas na tela do usuario
+
+ printf ("Carta 01\n");
+ printf ("Estado: " "%s/n" , estado1);
+ printf ("Cidade: " "%s\n" , cidade1);
+ printf ("Código da carta: " "%s\n" , codigoCarta1);
+ printf ("População: " "%d\n" , populacao1);
+ printf ("Area em K²: " "%f\n" , areak2_1);
+ printf ("PIB: " "%f\n" , pib1);
+ printf ("Quantidade de pontos turisticos: " "%d\n" , pontosTuristicos1);
+
+ //Exibição da carta 02 criadas na tela do usuario
+
+ printf ("Carta 02\n");
+ printf ("Estado: " "%s/n" , estado2);
+ printf ("Cidade: " "%s\n" , cidade2);
+ printf ("Código da carta: " "%s\n" , codigoCarta2);
+ printf ("População: " "%d\n" , populacao2);
+ printf ("Area em K²: " "%f\n" , areak2_2);
+ printf ("PIB: " "%f\n" , pib2);
+ printf ("Quantidade de pontos turisticos: " "%d\n" , pontosTuristicos2);
+
 
     return 0;
 }
