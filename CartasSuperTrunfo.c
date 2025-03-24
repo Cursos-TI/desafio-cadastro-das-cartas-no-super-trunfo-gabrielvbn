@@ -35,12 +35,14 @@ int main() {
 
   printf ("Agora vamos criar a carta 02 do jogo\n");
   printf ("Digite o nome do Estado: ");
-  getchar ();
   fgets (estado2 , 50 , stdin);
+  getchar ();
   printf ("Digite o nome da Cidade: ");
   fgets (cidade2 , 50 , stdin);
+  getchar ();
   printf ("Digite um codigo para a carta(Use Letras a A a H , numeros de 1 a 4 , ex A01): ");
-  scanf (" %s" , codigoCarta2);
+  getchar ();
+  scanf ("%s" , codigoCarta2);
   printf ("Qual a população desta cidade:");
   scanf (" %d" , &populacao2);
   printf ("Qual a area total da cidade em km²: ");
@@ -49,6 +51,13 @@ int main() {
   scanf (" %f" , &pib2);
   printf ("Quantos pontos turisticos esta cidade tem: ");
   scanf (" %d" , &pontosTuristicos2);
+
+//Calculo de Densidade populacional e pib per capta
+float densidade1 , densidade2 , pibpercapta1 , pibpercapta2 ;
+densidade1 = populacao1 / areak2_1 ;
+densidade2 = populacao2 / areak2_2 ;
+pibpercapta1 = pib1 / populacao1 ;
+pibpercapta2 = pib2 / populacao2 ;
 
 //Exibição da carta 01 criadas na tela do usuario
 
@@ -60,6 +69,8 @@ int main() {
  printf ("Area em K²: %f\n" , areak2_1);
  printf ("PIB: %f\n" , pib1);
  printf ("Quantidade de pontos turisticos: %d\n" , pontosTuristicos1);
+ printf ("Densidade Populacional: %f\n" , densidade1);
+ printf ("PIB per Capta: %f\n" , pibpercapta1);
 
  //Exibição da carta 02 criadas na tela do usuario
 
@@ -71,6 +82,8 @@ int main() {
  printf ("Area em K²: %f\n" , areak2_2);
  printf ("PIB: %f\n" , pib2);
  printf ("Quantidade de pontos turisticos: %d\n" , pontosTuristicos2);
+ printf ("Densidade Populacional: %f\n" , densidade2);
+ printf ("PIB per Capta: %f\n" , pibpercapta2);
 
 
     return 0;
