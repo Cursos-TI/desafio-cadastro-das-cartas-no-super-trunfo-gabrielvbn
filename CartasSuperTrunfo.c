@@ -12,6 +12,9 @@ int main() {
     char estado2[50] , cidade2[50] , codigoCarta2 [5];
     int populacao2 , pontosTuristicos2;
     float pib2 , areak2_2;
+
+//Nome do Jogo
+   printf("*************** Bem Vindo ao SUPER TRUNFO PAISES ***************\n");
     
 //Interação com o usuário para incersão de dados para criação da carta 01
 
@@ -22,9 +25,9 @@ int main() {
     fgets (cidade1 , 50 , stdin);
     printf ("Digite um codigo para a carta(Use Letras a A a H , numeros de 1 a 4 , ex A01): ");
     scanf (" %s" , codigoCarta1);
-    printf ("Qual a população desta cidade: ");
+    printf ("Qual a populacao desta cidade: ");
     scanf (" %d" , &populacao1);
-    printf ("Qual a area total da cidade em km²: ");
+    printf ("Qual a area total da cidade: ");
     scanf (" %f" , &areak2_1);
     printf ("Qual o PIB desta cidade: ");
     scanf (" %f" , &pib1);
@@ -42,9 +45,9 @@ int main() {
     printf ("Digite um codigo para a carta(Use Letras a A a H , numeros de 1 a 4 , ex A01): ");
     getchar ();
     scanf ("%s" , codigoCarta2);
-    printf ("Qual a população desta cidade:");
+    printf ("Qual a populacao desta cidade:");
     scanf (" %d" , &populacao2);
-    printf ("Qual a area total da cidade em km²: ");
+    printf ("Qual a area total da cidade: ");
     scanf (" %f" , &areak2_2);
     printf ("Qual o PIB desta cidade: ");
     scanf (" %f" , &pib2);
@@ -68,9 +71,9 @@ int main() {
    printf ("Carta 01\n");
    printf ("Estado: %s" , estado1);
    printf ("Cidade: %s" , cidade1);
-   printf ("Código da carta: %s\n" , codigoCarta1);
-   printf ("População: %d\n" , populacao1);
-   printf ("Area em K²: %f\n" , areak2_1);
+   printf ("Codigo da carta: %s\n" , codigoCarta1);
+   printf ("Populacao: %d\n" , populacao1);
+   printf ("Area: %f\n" , areak2_1);
    printf ("PIB: %f\n" , pib1);
    printf ("Quantidade de pontos turisticos: %d\n" , pontosTuristicos1);
    printf ("Densidade Populacional: %f\n" , densidade1);
@@ -82,9 +85,9 @@ int main() {
    printf ("Carta 02\n");
    printf ("Estado: %s" , estado2);
    printf ("Cidade: %s" , cidade2);
-   printf ("Código da carta: %s\n" , codigoCarta2);
-   printf ("População: %d\n" , populacao2);
-   printf ("Area em K²: %f\n" , areak2_2);
+   printf ("Codigo da carta: %s\n" , codigoCarta2);
+   printf ("Populacao: %d\n" , populacao2);
+   printf ("Area: %f\n" , areak2_2);
    printf ("PIB: %f\n" , pib2);
    printf ("Quantidade de pontos turisticos: %d\n" , pontosTuristicos2);
    printf ("Densidade Populacional: %f\n" , densidade2);
@@ -92,27 +95,42 @@ int main() {
    printf ("Super Poder: %.f\n" , superPoder2) ;
 
 //comparação das cartas
-   double resultPopulacao, resultArea , resultPIB , result_P_turisticos , resultPIBpCapta , resultDensidadeInv , resultSuperPoder , resultGeral ;
-   resultPopulacao = populacao1 > populacao2 ;
-   resultArea = areak2_1 > areak2_2 ;
-   resultPIB = pib1 > pib2 ;
-   result_P_turisticos = pontosTuristicos1 > pontosTuristicos2 ;
-   resultPIBpCapta = pibpercapta1 > pibpercapta2 ;
-   resultDensidadeInv = ( 1 / densidade1 ) > ( 1 / densidade2 ) ;
-   resultSuperPoder = superPoder1 > superPoder2 ;
-
-//Imprimindo Resultado
-    printf ("Vencedor em População: %.f\n" , resultPopulacao ) ;
-    printf ("Vencedor em Area: %.f\n" , resultArea ) ;
-    printf ("Vencedor em PIB: %.f\n" , resultPIB ) ;
-    printf ("Vencedor em Pontos turisticos: %.f\n" , result_P_turisticos ) ;
-    printf ("Vencedor em PIB per Capta: %.f\n" , resultPIBpCapta ) ;
-    printf ("Vencedor em Densidade: %.f\n" , resultDensidadeInv ) ;
-    printf ("Vencedor em Super Poder: %.f\n" , resultSuperPoder ) ;
-    printf ("Legenda: \n");
-    printf ("Resultado 1: Vencedor é a Carta 01\n") ;
-    printf ("Resultado 0: Vencedor e a Carta 02\n") ;
-
+   printf ("**********AGORA VAMOS AOS DUELOS**********\n");
+   if (populacao1 > populacao2 ) {
+       printf ("          %s   venceu no quesito POPULACAO.\n" , cidade1);
+   } else {
+       printf ("          %s   venceu no quesito POPULACAO.\n" , cidade2);
+}
+   if (areak2_1 > areak2_2 ) {
+       printf ("          %s   venceu no quesito AREA.\n" , cidade1);
+   } else {
+       printf ("          %s   venceu no quesito AREA.\n" , cidade2);
+}
+   if (pib1 > pib2 ) {
+       printf ("          %s   venceu no quesito PIB.\n" , cidade1);
+   } else {
+       printf ("          %s   venceu no quesito PIB.\n" , cidade2);
+}
+   if (pontosTuristicos1 > pontosTuristicos2 ) {
+       printf ("          %s   venceu no quesito PONTOS TURISTICOS.\n" , cidade1);
+   } else {
+       printf ("          %s   venceu no quesito PONTOS TURISTICOS.\n" , cidade2);
+}
+   if (densidade1 < densidade2 ) {
+       printf ("          %s   venceu no quesito DENSIDADE.\n" , cidade1);
+   } else {
+       printf ("          %s   venceu no quesito DENSIDADE.\n" , cidade2);
+}
+       if (pibpercapta1 > pibpercapta2 ) {
+       printf ("          %s   venceu no quesito PIB PER CAPTA.\n" , cidade1);
+   } else {
+       printf ("          %s   venceu no quesito PIB PER CAPTA.\n" , cidade2);
+}
+   if (superPoder1 > superPoder2 ) {
+       printf ("          %s   venceu no quesito SUPER PODER.\n" , cidade1);
+   } else {
+       printf ("          %s   venceu no quesito SUPER PODER.\n" , cidade2);
+}
 
 
     return 0;
