@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
  //Variaveis carta 01
@@ -21,8 +22,10 @@ int main() {
     printf ("Agora vamos criar a primeira carta do jogo\n");
     printf ("Digite o nome do Estado: ");
     fgets (estado1 , 50 , stdin);
+    estado1[strcspn(estado1,"\n")] = 0;
     printf ("Digite o nome da Cidade: ");
     fgets (cidade1 , 50 , stdin);
+    cidade1[strcspn(cidade1,"\n")] =0;
     printf ("Digite um codigo para a carta(Use Letras a A a H , numeros de 1 a 4 , ex A01): ");
     scanf (" %s" , codigoCarta1);
     printf ("Qual a populacao desta cidade: ");
@@ -40,8 +43,10 @@ int main() {
     getchar ();
     printf ("Digite o nome do Estado: ");
     fgets (estado2 , 50 , stdin);
+    estado2[strcspn(estado2,"\n")] =0;
     printf ("Digite o nome da Cidade: ");
     fgets (cidade2 , 50 , stdin);
+    cidade2[strcspn(cidade2,"\n")] =0;
     printf ("Digite um codigo para a carta(Use Letras a A a H , numeros de 1 a 4 , ex A01): ");
     getchar ();
     scanf ("%s" , codigoCarta2);
@@ -69,8 +74,8 @@ int main() {
 //Exibição da carta 01 criadas na tela do usuario
 
    printf ("Carta 01\n");
-   printf ("Estado: %s" , estado1);
-   printf ("Cidade: %s" , cidade1);
+   printf ("Estado: %s\n" , estado1);
+   printf ("Cidade: %s\n" , cidade1);
    printf ("Codigo da carta: %s\n" , codigoCarta1);
    printf ("Populacao: %d\n" , populacao1);
    printf ("Area: %f\n" , areak2_1);
@@ -83,8 +88,8 @@ int main() {
 //Exibição da carta 02 criadas na tela do usuario
 
    printf ("Carta 02\n");
-   printf ("Estado: %s" , estado2);
-   printf ("Cidade: %s" , cidade2);
+   printf ("Estado: %s\n" , estado2);
+   printf ("Cidade: %s\n" , cidade2);
    printf ("Codigo da carta: %s\n" , codigoCarta2);
    printf ("Populacao: %d\n" , populacao2);
    printf ("Area: %f\n" , areak2_2);
@@ -95,42 +100,138 @@ int main() {
    printf ("Super Poder: %.f\n" , superPoder2) ;
 
 //comparação das cartas
-   printf ("**********AGORA VAMOS AOS DUELOS**********\n");
-   if (populacao1 > populacao2 ) {
-       printf ("          %s   venceu no quesito POPULACAO.\n" , cidade1);
-   } else {
-       printf ("          %s   venceu no quesito POPULACAO.\n" , cidade2);
-}
-   if (areak2_1 > areak2_2 ) {
-       printf ("          %s   venceu no quesito AREA.\n" , cidade1);
-   } else {
-       printf ("          %s   venceu no quesito AREA.\n" , cidade2);
-}
-   if (pib1 > pib2 ) {
-       printf ("          %s   venceu no quesito PIB.\n" , cidade1);
-   } else {
-       printf ("          %s   venceu no quesito PIB.\n" , cidade2);
-}
-   if (pontosTuristicos1 > pontosTuristicos2 ) {
-       printf ("          %s   venceu no quesito PONTOS TURISTICOS.\n" , cidade1);
-   } else {
-       printf ("          %s   venceu no quesito PONTOS TURISTICOS.\n" , cidade2);
-}
-   if (densidade1 < densidade2 ) {
-       printf ("          %s   venceu no quesito DENSIDADE.\n" , cidade1);
-   } else {
-       printf ("          %s   venceu no quesito DENSIDADE.\n" , cidade2);
-}
-       if (pibpercapta1 > pibpercapta2 ) {
-       printf ("          %s   venceu no quesito PIB PER CAPTA.\n" , cidade1);
-   } else {
-       printf ("          %s   venceu no quesito PIB PER CAPTA.\n" , cidade2);
-}
-   if (superPoder1 > superPoder2 ) {
-       printf ("          %s   venceu no quesito SUPER PODER.\n" , cidade1);
-   } else {
-       printf ("          %s   venceu no quesito SUPER PODER.\n" , cidade2);
-}
+   printf ("**********AGORA VAMOS AO DUELO**********\n");
+   printf ("Digite a Opcao do Atributo Escolhido para o DUELO:\n ");
+   printf ("1.Populacao\n");
+   printf ("2.Area\n");
+   printf ("3.PIB\n");
+   printf ("4.Pontos Turisticos\n");
+   printf ("5.Densidade\n");
+   printf ("6.PIB per Capta\n");
+   printf ("7.SUPER PODER\n"); 
+   int opcao ;
+   scanf ("%d" , &opcao);
+
+   switch (opcao) {
+        case 1:
+           printf ("Voce escolheu 1.Populacao\n");
+           if (populacao1 > populacao2) {
+            printf ("%s: %d\n" , cidade1 , populacao1);
+            printf ("%s: %d\n" , cidade2 , populacao2);
+            printf ("%s venceu no quesito POPULACAO.\n" , cidade1);
+        } else if (populacao2 < populacao1) {
+            printf ("%s: %d\n" , cidade2 , populacao2);
+            printf ("%s: %d\n" , cidade1 , populacao1);
+            printf ("%s venceu no quesito POPULACAO.\n" , cidade2);
+        } else {
+            printf ("%s: %d\n" , cidade1 , populacao1);
+            printf ("%s: %d\n" , cidade2 , populacao2);
+            printf ("EMPATOU\n");
+     }
+        break;   
+        case 2:
+           printf ("Voce escolheu 2.Area\n");
+           if (areak2_1 > areak2_2) {
+            printf ("%s: %f\n" , cidade1 , areak2_1);
+            printf ("%s: %f\n" , cidade2 , areak2_2);
+            printf ("%s venceu no quesito Area.\n" , cidade1);
+        } else if (areak2_1 < areak2_2) {
+            printf ("%s: %f\n" , cidade2 , areak2_2);
+            printf ("%s: %f\n" , cidade1 , areak2_1);
+            printf ("%s venceu no quesito Area.\n" , cidade2);
+        } else {
+            printf ("%s: %f\n" , cidade1 , areak2_1);
+            printf ("%s: %f\n" , cidade2 , areak2_2);
+            printf ("EMPATOU\n");
+     }
+        break;
+        case 3:
+           printf ("Voce escolheu 3.PIB\n");
+           if (pib1 > pib2) {
+            printf ("%s: %f\n" , cidade1 , pib1);
+            printf ("%s: %f\n" , cidade2 , pib2);
+            printf ("%s venceu no quesito PIB.\n" , cidade1);
+        } else if (pib1 < pib2) {
+            printf ("%s: %f\n" , cidade2 , pib2);
+            printf ("%s: %f\n" , cidade1 , pib1);
+            printf ("%s venceu no quesito PIB.\n" , cidade2);
+        } else {
+            printf ("%s: %f\n" , cidade1 , pib1);
+            printf ("%s: %f\n" , cidade2 , pib2);
+            printf ("EMPATOU\n");
+     }
+        break;
+        case 4:
+           printf ("Voce escolheu 4.Pontos Turisticos\n");
+           if (pontosTuristicos1 > pontosTuristicos2) {
+            printf ("%s: %d\n" , cidade1 , pontosTuristicos1);
+            printf ("%s: %d\n" , cidade2 , pontosTuristicos2);
+            printf ("%s venceu no quesito Pontos Turisticos.\n" , cidade1);
+        } else if (pontosTuristicos1 < pontosTuristicos2) {
+            printf ("%s: %d\n" , cidade2 , pontosTuristicos2);
+            printf ("%s: %d\n" , cidade1 , pontosTuristicos1);
+            printf ("%s venceu no quesito Pontos Turisticos.\n" , cidade2);
+        } else {
+            printf ("%s: %d\n" , cidade1 , pontosTuristicos1);
+            printf ("%s: %d\n" , cidade2 , pontosTuristicos2);
+            printf ("EMPATOU\n");
+     }
+        break;
+        case 5:
+           printf ("Voce escolheu 5.Densidade\n");
+           if (densidade1 < densidade2) {
+            printf ("%s: %f\n" , cidade1 , densidade1);
+            printf ("%s: %f\n" , cidade2 , densidade2);
+            printf ("%s venceu no quesito Densidade.\n" , cidade1);
+        } else if (densidade1 > densidade2) {
+            printf ("%s: %f\n" , cidade2 , densidade2);
+            printf ("%s: %f\n" , cidade1 , densidade1);
+            printf ("%s venceu no quesito Densidade.\n" , cidade2);
+        } else {
+            printf ("%s: %f\n" , cidade1 , densidade1);
+            printf ("%s: %f\n" , cidade2 , densidade2);
+            printf ("EMPATOU\n");
+     }
+        break;
+        case 6:
+           printf ("Voce escolheu 6.PIB per Capta\n");
+           if (pibpercapta1 > pibpercapta2) {
+            printf ("%s: %f\n" , cidade1 , pibpercapta1);
+            printf ("%s: %f\n" , cidade2 , pibpercapta2);
+            printf ("%s venceu no quesito PIB per Capta.\n" , cidade1);
+        } else if (pibpercapta1 < pibpercapta2) {
+            printf ("%s: %f\n" , cidade2 , pibpercapta2);
+            printf ("%s: %f\n" , cidade1 , pibpercapta1);
+            printf ("%s venceu no quesito PIB per Capta.\n" , cidade2);
+        } else {
+            printf ("%s: %f\n" , cidade1 , pibpercapta1);
+            printf ("%s: %f\n" , cidade2 , pibpercapta2);
+            printf ("EMPATOU\n");
+        }
+        break;
+        case 7:
+          printf ("Voce escolheu 7.SUPER PODER\n");
+          if (superPoder1 > superPoder2) {
+            printf ("%s: %f\n" , cidade1 , superPoder1);
+            printf ("%s: %f\n" , cidade2 , superPoder2);
+            printf ("%s venceu no quesito SUPER PODER.\n" , cidade1);
+        } else if (superPoder1 < superPoder2) {
+            printf ("%s: %f\n" , cidade2 , superPoder2);
+            printf ("%s: %f\n" , cidade1 , superPoder1);
+            printf ("%s venceu no quesito SUPER PODER.\n" , cidade2);
+        } else {
+            printf ("%s: %f\n" , cidade1 , superPoder1);
+            printf ("%s: %f\n" , cidade2 , superPoder2);
+            printf ("EMPATOU\n");
+        break;
+
+        default:
+           printf ("Opcao invalida\n");
+        }
+        break;
+        
+   }
+   
 
 
     return 0;
